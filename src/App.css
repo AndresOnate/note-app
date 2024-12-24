@@ -1,0 +1,165 @@
+body {
+  margin: 20px;
+  background-color: rgb(250, 247, 247);
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: flex-end; /* Alinea los botones a la derecha */
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.view-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.view-buttons button {
+  font-size: 14px;
+  padding: 10px 15px;
+  background-color: rgb(88, 105, 228); /* Igual al botón Agregar Notes */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-buttons button:hover {
+  background-color: rgb(58, 84, 197); /* Color de hover coherente */
+}
+
+.view-buttons button.active {
+  background-color: rgb(47, 62, 164);
+  font-weight: bold;
+}
+
+.content-container {
+  display: grid;
+  grid-template-columns: 200px 1fr; /* Formulario a la izquierda, grid de notas a la derecha */
+  gap: 20px;
+}
+
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+textarea,
+input {
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.note-form button {
+  border-radius: 5px;
+  background-color: rgb(88, 105, 228);
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+}
+
+.note-form button:hover {
+  background-color: rgb(58, 84, 197);
+  cursor: pointer;
+}
+
+.notes-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: minmax(250px, auto);
+  gap: 20px;
+}
+
+.note-item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #cccccc;
+  padding: 20px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #f3f4f7, #dbe2e8); 
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  position: relative;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  margin-bottom: 10px; 
+  word-wrap: break-word; 
+}
+
+.note-item .note-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.note-item .note-content {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.note-item:hover {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.note-content {
+  overflow: auto; 
+  word-wrap: break-word; 
+  flex-grow: 1; 
+  padding: 10px;
+}
+
+.notes-header {
+  display: flex;
+  justify-content: flex-end; /* Alinea los botones de edición y borrado a la derecha */
+  gap: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.notes-header button {
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  max-width: fit-content;
+}
+
+.notes-header button.active {
+  background-color: rgb(88, 105, 228);
+  color: white;
+}
+
+.archive-button {
+  font-size: 15px;
+  padding: 5px 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.archive-button:hover {
+  background-color: rgb(58, 84, 197); 
+}
+
+.archive-button.archived {
+  background-color: rgb(220, 89, 89); 
+}
+
+.archive-button.active {
+  background-color: rgb(59, 75, 192); 
+}
