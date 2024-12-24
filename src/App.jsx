@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import NoteForm from './components/NoteForm';
 import NotesGrid from './components/NotesGrid';
 import {
@@ -18,7 +18,7 @@ const App = () => {
   const [editingId, setEditingId] = useState(null);
   const [view, setView] = useState('active'); 
 
-  const loadNotes = async () => {
+  const loadNotes = useCallback(async () => {
     try {
       let data;
       if (view === 'active') {
@@ -33,11 +33,11 @@ const App = () => {
     } catch (error) {
       console.error('Error loading notes:', error);
     }
-  };
+  }, [view]);
 
   useEffect(() => {
     loadNotes();
-  }, [view]); 
+  }, [loadNotes]); // Dependency is the memoized function
 
   const addOrUpdateNote = async (note) => {
     try {
