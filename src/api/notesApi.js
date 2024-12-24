@@ -1,4 +1,5 @@
-const BASE_URL = 'http://localhost:8080/api/notes';
+const BASE_URL = process.env.REACT_APP_API;
+;
 
 export const fetchNotes = async () => {
   const response = await fetch(BASE_URL);
