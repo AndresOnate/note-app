@@ -20,7 +20,7 @@ const App = () => {
 
   useEffect(() => {
     loadNotes();
-  }, [loadNotes]); 
+  }, [view]); 
 
   const loadNotes = async () => {
     try {
