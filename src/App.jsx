@@ -18,10 +18,6 @@ const App = () => {
   const [editingId, setEditingId] = useState(null);
   const [view, setView] = useState('active'); 
 
-  useEffect(() => {
-    loadNotes();
-  }, [view]); 
-
   const loadNotes = async () => {
     try {
       let data;
@@ -38,6 +34,10 @@ const App = () => {
       console.error('Error loading notes:', error);
     }
   };
+
+  useEffect(() => {
+    loadNotes();
+  }, [view]); 
 
   const addOrUpdateNote = async (note) => {
     try {
